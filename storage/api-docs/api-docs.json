@@ -1,0 +1,153 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Malom  ApplicationAPI",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/events": {
+            "get": {
+                "tags": [
+                    "events"
+                ],
+                "summary": "Get all events",
+                "operationId": "1031372a8175e66ba1b46a820fe040d0",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Example: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTViY2I2YzNmMTk3NDI3YTMwMTIxNzk5NjRhZjE1M2Y5NzcwMGI5NTY2MzFlYTdmNTM0YmNlZjM5NTExNDY4ZDkzY2RmNGFkNDY5MTc3ODYiLCJpYXQiOjE2NDc3NzI0MTYuNDgxOTA1LCJuYmYiOjE2NDc3NzI0MTYuNDgxOTA3LCJleHAiOjE2NzkzMDg0MTYuNDcxMDQyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.chJLl-gz3k-GuhTXGIbM9oYuzkh5qsnz5rVqBj2gLJg-0YwX0y1Mn5s5YZtutkWx3cQnfRyZ5x38w80ljlKb3zzMrT0X-rW8Kbf8xDdA9xKu6nWBmxZi6L9qMKmp_cCNbarwV_dpQzL9Uv3ALCOi_fgiMiQOr6DO9cMKKhQf--AZ4Zu-xNl6ZkdmjFt0MA1NZ2tT7k7NnoUw8laoYx7P3K3NwIM-jReBNQyCyXuptJwpYuZaeXRe4waA5OZG2SycgQ3LZSbpuXB_qEOtMIkASyCnyVz29OY3-HTNidLMGlfddl0aSheygTvBnk84BzIQlal1NMQnHnw8cN_P8PEtBL9aHcJ2Gs7Zr1WeIzpgQce7wi9Mna_W1Wa1iDYr9GLRatMxCuT853SAN-SdBKK9jGfLzPJPkFzTEqAbQYriduLlYY_BIYsqUndDRSrnl76HSoS1_vIKtNyhKTXWtXwgIXFQBB_CnCbSYWwT34pt4VJ6bSd8Ed2V9yCHubu_wXHi62vfcEhl7aH9g-GybRT9ih-pWE94jAIVwoVK1cNeS4Heh0iLE7KgcHy2bkvQQGinXBALgcsME0Nz-0Lo7kbsG5iG4tMcjvyAkcudKDobJbvo4RCq4_2GvjcvZhUjOI01IkN4B6fkwGvBqtxkfgySh3ZMnVA66-4gqef5CbBkU1E"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all events"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/stores": {
+            "get": {
+                "tags": [
+                    "stores"
+                ],
+                "summary": "Get all stores",
+                "operationId": "44eee75736ebedbfc01e6efb1555ddf4",
+                "parameters": [
+                    {
+                        "name": "Authorization",
+                        "in": "header",
+                        "description": "Example: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOTViY2I2YzNmMTk3NDI3YTMwMTIxNzk5NjRhZjE1M2Y5NzcwMGI5NTY2MzFlYTdmNTM0YmNlZjM5NTExNDY4ZDkzY2RmNGFkNDY5MTc3ODYiLCJpYXQiOjE2NDc3NzI0MTYuNDgxOTA1LCJuYmYiOjE2NDc3NzI0MTYuNDgxOTA3LCJleHAiOjE2NzkzMDg0MTYuNDcxMDQyLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.chJLl-gz3k-GuhTXGIbM9oYuzkh5qsnz5rVqBj2gLJg-0YwX0y1Mn5s5YZtutkWx3cQnfRyZ5x38w80ljlKb3zzMrT0X-rW8Kbf8xDdA9xKu6nWBmxZi6L9qMKmp_cCNbarwV_dpQzL9Uv3ALCOi_fgiMiQOr6DO9cMKKhQf--AZ4Zu-xNl6ZkdmjFt0MA1NZ2tT7k7NnoUw8laoYx7P3K3NwIM-jReBNQyCyXuptJwpYuZaeXRe4waA5OZG2SycgQ3LZSbpuXB_qEOtMIkASyCnyVz29OY3-HTNidLMGlfddl0aSheygTvBnk84BzIQlal1NMQnHnw8cN_P8PEtBL9aHcJ2Gs7Zr1WeIzpgQce7wi9Mna_W1Wa1iDYr9GLRatMxCuT853SAN-SdBKK9jGfLzPJPkFzTEqAbQYriduLlYY_BIYsqUndDRSrnl76HSoS1_vIKtNyhKTXWtXwgIXFQBB_CnCbSYWwT34pt4VJ6bSd8Ed2V9yCHubu_wXHi62vfcEhl7aH9g-GybRT9ih-pWE94jAIVwoVK1cNeS4Heh0iLE7KgcHy2bkvQQGinXBALgcsME0Nz-0Lo7kbsG5iG4tMcjvyAkcudKDobJbvo4RCq4_2GvjcvZhUjOI01IkN4B6fkwGvBqtxkfgySh3ZMnVA66-4gqef5CbBkU1E"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get all stores"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Sign in",
+                "description": "Login by email, password",
+                "operationId": "authLogin",
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "application/json"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "user1@mail.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "PassWord12345"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login successful",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "token": {
+                                            "type": "string",
+                                            "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmMyZDlkZmU5NGQwMjAxNWY1OGY1OGIzOTdjYWJiMDM1Yjk3NjYxYWNjOGQzMGNhYWM0YWVmMjY3OTNkMmFkMjRmZWM2MWFlMDg3MTYwZTQiLCJpYXQiOjE2NDc4NTMzMTEuMjk1MjAzLCJuYmYiOjE2NDc4NTMzMTEuMjk1MjA2LCJleHAiOjE2NzkzODkzMTEuMjg4MDgzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ydo4C7nBjG6lFnY6YK5h02Xubu87kZehsbx_bgK63EjfKfdfC0nTsfb5bjl7G795ckMvY6GoqmK25BhKfrlDzWrbfOd0yGz5_uCDod5ODsp9EUybi8S3h6RE8jOFyO-Kv0Yq88AwoMYo_DI2ZMbvHk5wdD5HgFSDEhF4v8vl3d7Jlj50VI48lLpdzkm7Dx-C93QJcvYkX3_oXrvJiAMelWcv0Wed5xqC_s4tLVg81_eI9s2xdPGFSDY74rVZqJ_bcU9HTvXb1FY7-G5Uhc6aAJKG5BCyMrgm5bstw0Z7YwLcGXxkV9FFq4Q9KswcOQrtc2v7IgDRQbCUGJ_QI5vajJzPlUvAHgbqgpfVaeWPIOd7FUpEJ_gV5kTurLqmLBJJOAwF5YUA3CGE7q3xw8MOs-MiLz9ROPPRXeg4zLsw7GPpIRA21PsefFLNQ1JRr0HAclgAurtFuyVLhDbW5mANDxpLRT2AM45ztqWmTJtVfGrnQHB12saRfpepfSwIwrcP6c7t77qS7gm3fcIEtrZOJQ09hkkAAjcAPJ4XuSW_EVFaqeN_UFyceAlZzHBH8KAOloHANL9l1LcD3oiMy7z25Fg2ZvySqnYxq63LP2iQ-ojVxTGjGKzIS1FLQlqwKgGxK3cshdz_iA7qO_XHI17MyELZoDmXjDYhowLWImh59i0"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "responses": {
+            "422": {
+                "description": "Wrong credentials response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "Sorry, wrong email address or password. Please try again"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "security": {
+        "bearer": {
+            "type": "http",
+            "description": "Authorization token obtained from logging in.",
+            "name": "Authorization",
+            "in": "header",
+            "scheme": "bearer"
+        },
+        "0": []
+    }
+}
