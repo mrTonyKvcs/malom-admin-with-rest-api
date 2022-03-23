@@ -19,7 +19,7 @@ use App\Http\Controllers\API\StoreController;
 // Route::post('register', [PassportAuthController::class, 'register']);
 Route::post('login', [PassportAuthController::class, 'login']);
 
-Route::middleware('auth:api')->group(function () {
+// Route::middleware('auth:api')->group(function () {
     Route::resource('stores', StoreController::class);
     Route::resource('events', EventController::class);
-});
+// });
