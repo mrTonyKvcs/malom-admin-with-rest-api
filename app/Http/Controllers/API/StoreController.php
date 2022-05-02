@@ -40,7 +40,9 @@ class StoreController extends Controller
         $headerSecretKey = $request->header('secretkey');
 
         if ($this->secretKey === $headerSecretKey) {
-            $stores = Store::all();
+            $stores = Store::query()
+                ->exceptions()
+                ->get();
 
             return response()->json([
                 'status'   => 200,

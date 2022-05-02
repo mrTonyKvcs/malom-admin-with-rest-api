@@ -58,4 +58,15 @@ class Store extends Model
     {
         return $this->hasMany(Social::class);
     }
+
+    /**
+     * Scope a query to only include active users.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return void
+     */
+    public function scopeExceptions($query)
+    {
+        return $query->whereNotIn('id', [1]);
+    }
 }
