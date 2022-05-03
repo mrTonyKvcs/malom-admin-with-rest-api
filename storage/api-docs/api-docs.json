@@ -53,6 +53,30 @@
                 }
             }
         },
+        "/api/stores/{id}": {
+            "get": {
+                "tags": [
+                    "stores"
+                ],
+                "summary": "Get all stores",
+                "operationId": "7c902b05057fc989b85f28b4d633839d",
+                "parameters": [
+                    {
+                        "name": "secretkey",
+                        "in": "header",
+                        "description": "Example: P6hlLNn9axgOQp9cJCEYKpHZEj7zWpl9"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get store"
+                    },
+                    "401": {
+                        "description": "Invalid secret key"
+                    }
+                }
+            }
+        },
         "/api/login": {
             "post": {
                 "tags": [

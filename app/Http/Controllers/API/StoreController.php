@@ -56,16 +56,36 @@ class StoreController extends Controller
         ]);
     }
     
+    /**
+     * @OA\Get(
+     *     path="/api/stores/{id}",
+     *     summary="Get all stores",
+     *     tags={"stores"},
+     *     @OA\Parameter(
+     *      name="secretkey",
+     *      in="header",
+     *      description="Example: P6hlLNn9axgOQp9cJCEYKpHZEj7zWpl9"
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Get store"
+     *     ),
+     *     @OA\Response(
+     *         response=401,
+     *         description="Invalid secret key"
+     *     ),
+     * )
+     */  
     public function show(Request $request, $id)
     {
         $headerSecretKey = $request->header('secretkey');
 
         if ($this->secretKey === $headerSecretKey) {
-            $store = Store::where('id', $id)->get();
+            $store = Store::where('id', $id)->first();
 
             return response()->json([
                 'status'   => 200,
-                'data'      => StoreResource::collection($store)
+                'data'      => StoreResource::collection([$store])
             ]);
         }
 
