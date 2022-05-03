@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\OpenHours;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Store extends Model
 {
-    use HasFactory; use SoftDeletes;
+    use HasFactory; use SoftDeletes; use OpenHours;
 
     protected $fillable = [
         'name', 'type', 'slug', 'floor', 'email', 'mondays_text', 'description', 'short_description', 'path', 'thumbnail', 'phone', 'opened_at',
@@ -17,6 +18,11 @@ class Store extends Model
     protected $dates = [
         'opened_at',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+    }
 
     /**
      * Get the categories associated with the given store.

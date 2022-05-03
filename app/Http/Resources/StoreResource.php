@@ -28,7 +28,7 @@ class StoreResource extends JsonResource
             'phone' => $this->phone,
             'description' => strip_tags($this->description),
             'facebook' => $this->socials()->where('icon_name', 'social-facebook')->select('url')->first()->url ?? null,
-            'hours' => $this->hours
+            'hours' => $this->getOpenHours()
         ];
     }
 }

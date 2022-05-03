@@ -55,7 +55,7 @@ class StoreController extends Controller
             'error'      => 'Invalid secret key!'
         ]);
     }
-
+    
     public function show(Request $request, $id)
     {
         $headerSecretKey = $request->header('secretkey');
