@@ -55,4 +55,23 @@ class StoreController extends Controller
             'error'      => 'Invalid secret key!'
         ]);
     }
+
+    public function show(Request $request, $id)
+    {
+        $headerSecretKey = $request->header('secretkey');
+
+        if ($this->secretKey === $headerSecretKey) {
+            $store = Store::where('id', $id)->get();
+
+            return response()->json([
+                'status'   => 200,
+                'data'      => StoreResource::collection($store)
+            ]);
+        }
+
+        return response()->json([
+            'status'   => 401,
+            'error'      => 'Invalid secret key!'
+        ]);
+    }
 }
