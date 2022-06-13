@@ -22,7 +22,7 @@ class EventResource extends JsonResource
             'name' => $this->title,
             'date_start' => Carbon::parse($this->started_at)->format('Y-m-d'),
             'date_end' => Carbon::parse($this->finished_at)->format('Y-m-d'),
-            'description' => strip_tags($this->description),
+            'description' => $this->description,
             'imageUrl' => $baseUrl . basename($this->path),
             'tnImageUrl' => $baseUrl . basename($this->thumbnail),
             'place' => $this->store->name ?? null
