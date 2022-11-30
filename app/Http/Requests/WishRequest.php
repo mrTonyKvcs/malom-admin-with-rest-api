@@ -28,6 +28,7 @@ class WishRequest extends FormRequest
         return [
             'name'  => 'required',
             'email' => 'required|email|unique:wishes,email',
+            'age'   => 'required|integer|min:6|max:14',
             'phoneNumber' => 'required',
             'content' => 'required',
         ];
@@ -50,6 +51,10 @@ class WishRequest extends FormRequest
             'name.required' => 'Név megadása kötelező!',
             'email.required' => 'Email cím megadása kötelező!',
             'email.unique' => 'Ezzel az email címmel már regisztráltak!',
+            'age.required' => 'Életkor megadása kötelező!',
+            'age.integer' => 'Életkornak számnak kell lennie!',
+            'age.min' => 'Életkornak 6 - 14 évesnek kell lennie!',
+            'age.max' => 'Életkornak 6 - 14 évesnek kell lennie!',
             'phoneNumber.required' => 'Telefonszám megadása kötelező!',
             'content.required' => 'Kívánságlista megadása kötelező!'
         ];

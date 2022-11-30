@@ -16,9 +16,11 @@ return new class () extends Migration {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->integer('age');
             $table->string('phone_number');
             $table->longText('content');
             $table->boolean('is_validated')->default(false);
+            $table->boolean('accept_gdpr')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

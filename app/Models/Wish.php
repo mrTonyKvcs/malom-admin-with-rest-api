@@ -11,5 +11,5 @@ class Wish extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['name', 'email', 'phone_number', 'content', 'is_validated'];
+    protected $fillable = ['name', 'email', 'age', 'phone_number', 'content', 'is_validated' , 'accept_gdpr'];
 }

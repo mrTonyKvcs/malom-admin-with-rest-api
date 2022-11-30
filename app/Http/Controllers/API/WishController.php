@@ -36,6 +36,10 @@ class WishController extends Controller
      *         response=401,
      *         description="Invalid secret key"
      *     ),
+     *     @OA\Response(
+     *         response=500,
+     *         description="Server error"
+     *     ),
      * )
      */
     public function store(WishRequest $request)
