@@ -23,5 +23,5 @@ Route::post('login', [PassportAuthController::class, 'login']);
 // Route::middleware('auth:api')->group(function () {
 Route::resource('stores', StoreController::class);
 Route::resource('events', EventController::class);
-Route::resource('wish', WishController::class);
+// Route::resource('wish', WishController::class);
 // });
