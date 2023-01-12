@@ -102,7 +102,7 @@ class GetTheMyWayAppsOffers extends Command
         $originalImageUrl = $offer['thumbnail']['urls']['thumbnail'];
         $offerId = $offer['id'];
         $offerSlug = $offerId . '-' . Str::slug($offer['name']);
-        Storage::disk('local')->put('public/myway/' . $offerSlug . '.jpg', file_get_contents($originalImageUrl));
+        Storage::disk('local')->put('public/myway-offers/' . $offerSlug . '.jpg', file_get_contents($originalImageUrl));
         return $offerSlug;
     }
 
