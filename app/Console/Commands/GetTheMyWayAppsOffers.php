@@ -127,8 +127,8 @@ class GetTheMyWayAppsOffers extends Command
                                 'description' => isset($offer['postfields'][1]['content'])
                                     ? preg_replace('/\xEE[\x80-\xBF][\x80-\xBF]|\xEF[\x81-\x83][\x80-\xBF]/', '', $offer['postfields'][1]['content'])
                                     : preg_replace('/\xEE[\x80-\xBF][\x80-\xBF]|\xEF[\x81-\x83][\x80-\xBF]/', '', json_decode($offer['postfields'][0]['content'], true)['text']),
-                                'path' => '/images/myway-offers/' . $slug . '.jpg',
-                                'thumbnail' => '/images/myway-offers/' . $slug . '.jpg',
+                                'path' => 'images/myway-offers/' . $slug . '.jpg',
+                                'thumbnail' => 'images/myway-offers/' . $slug . '.jpg',
                                 'published_at' => Carbon::parse($offer['postperiods'][0]['start'])->format('Y-m-d'),
                                 'started_at' => Carbon::parse($offer['postperiods'][0]['start'])->format('Y-m-d'),
                                 'finished_at' => Carbon::parse($offer['postperiods'][0]['stop'])->format('Y-m-d'),
