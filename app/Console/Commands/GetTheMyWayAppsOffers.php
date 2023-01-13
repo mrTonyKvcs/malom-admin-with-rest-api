@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\MyWaysStore;
 use App\Models\Offer;
+use App\Models\Store;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
@@ -90,11 +91,7 @@ class GetTheMyWayAppsOffers extends Command
 
     private function getStoreId($item)
     {
-        $store = MyWaysStore::query()
-            ->where('name', $item['description'])
-            ->orWhere('myway_store_id', $item['minor'])
-            ->first();
-
+        $store = Store::where('name', $item['description'])->first();
         return isset($store->id) ? $store->id : false;
     }
     private function saveImage($offer)
