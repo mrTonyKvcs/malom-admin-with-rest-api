@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Image;
 use App\Models\MyWaysStore;
 use App\Models\Offer;
 use App\Models\Store;
@@ -11,6 +12,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as ImageResize;
 
 class GetTheMyWayAppsOffers extends Command
 {
@@ -99,7 +101,11 @@ class GetTheMyWayAppsOffers extends Command
         $originalImageUrl = $offer['thumbnail']['urls']['large'];
         $offerId = $offer['id'];
         $offerSlug = $offerId . '-' . Str::slug($offer['name']);
-        Storage::disk('local')->put('public/myway-offers/' . $offerSlug . '.jpg', file_get_contents($originalImageUrl));
+        $img = ImageResize::make(file_get_contents($originalImageUrl))
+            ->resize(300, 300)
+            ->encode();
+        Storage::disk('local')
+            ->put('public/myway-offers/' . $offerSlug . '.jpg', $img);
         return $offerSlug;
     }
 
