@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\MyWaysStore;
 use App\Models\Store;
+use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
@@ -49,10 +50,11 @@ class GetTheMyWayAppsStoresId extends Command
         $this->checkData();
         $this->data->each(function ($stores) {
             collect($stores['shops'])->each(function ($store) {
+                $originalStore = Store::where('name', $store['name'])->first();
                 MyWaysStore::updateOrCreate([
                     'myway_store_id' => $store['id'],
                     'name'           => $store['name'],
-                    'store_id'       => $store['external_id']
+                    'store_id'       => $originalStore->id
                 ]);
             });
         });
