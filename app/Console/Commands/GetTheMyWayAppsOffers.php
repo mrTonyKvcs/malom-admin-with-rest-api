@@ -91,8 +91,8 @@ class GetTheMyWayAppsOffers extends Command
     private function getStoreId($item)
     {
         $store = MyWaysStore::query()
-            ->where('myway_store_id', $item['minor'])
-            ->orWhere('name', $item['description'])
+            ->where('name', $item['description'])
+            ->orWhere('myway_store_id', $item['minor'])
             ->first();
 
         return isset($store->id) ? $store->id : false;
