@@ -96,7 +96,7 @@ class GetTheMyWayAppsOffers extends Command
     }
     private function saveImage($offer)
     {
-        $originalImageUrl = $offer['thumbnail']['urls']['thumbnail'];
+        $originalImageUrl = $offer['thumbnail']['urls']['large'];
         $offerId = $offer['id'];
         $offerSlug = $offerId . '-' . Str::slug($offer['name']);
         Storage::disk('local')->put('public/myway-offers/' . $offerSlug . '.jpg', file_get_contents($originalImageUrl));
