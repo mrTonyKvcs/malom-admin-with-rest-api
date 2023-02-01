@@ -9,7 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Store extends Model
 {
-    use HasFactory; use SoftDeletes; use OpenHours;
+    use HasFactory;
+    use SoftDeletes;
+    use OpenHours;
 
     protected $fillable = [
         'name', 'type', 'slug', 'floor', 'email', 'mondays_text', 'description', 'short_description', 'path', 'thumbnail', 'phone', 'opened_at',
@@ -52,6 +54,16 @@ class Store extends Model
     public function exceptions()
     {
         return $this->hasMany(Exception::class);
+    }
+
+    /**
+     * Get the store associated with the given monday.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function mondays()
+    {
+        return $this->belongsToMany(Monday::class);
     }
 
 
