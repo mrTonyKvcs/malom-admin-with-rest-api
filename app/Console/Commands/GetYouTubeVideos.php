@@ -46,17 +46,19 @@ class GetYouTubeVideos extends Command
         $allPlaylists = config('malom.youtube.playlists');
 
         foreach ($allPlaylists as $key => $playlists) {
-            $type = $key;
+            $playlistType = $key;
             foreach ($playlists as $playlistId) {
-                $playlistItems = json_decode(file_get_contents("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=$playlistId&key=$API_KEY"));
+                $url = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=$playlistId&key=$API_KEY";
+                $playlistItems = json_decode(file_get_contents($url));
+
                 foreach ($playlistItems->items as $video) {
                     $publishedAt = Carbon::parse($video->snippet->publishedAt)->format('Y-m-d');
+                    $videoId = $video->snippet->resourceId->videoId;
+
                     YouTubeVideo::updateOrCreate(
+                        ['video_id' => $videoId],
                         [
-                            'video_id' => $video->snippet->resourceId->videoId
-                        ],
-                        [
-                            'playlist_name' => $type == YouTubePlaylist::WORKSHOP ? YouTubePlaylist::WORKSHOP : YouTubePlaylist::VLOG,
+                            'playlist_name' => $playlistType == YouTubePlaylist::WORKSHOP ? YouTubePlaylist::WORKSHOP : YouTubePlaylist::VLOG,
                             'title' => remove_emoji($video->snippet->title),
                             'description' => $video->snippet->description,
                             'published_at' => $publishedAt,
