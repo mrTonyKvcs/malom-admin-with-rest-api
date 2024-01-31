@@ -52,7 +52,7 @@ class SetDefaultMalomModays extends Command
     private function setConfigs()
     {
         $this->mondays = config('malom.mondays');
-        $jsonData = Storage::get('public/malom-mondays/active.json');
+        $jsonData = Storage::get('public/malom-mondays/24-active.json');
         $this->data = json_decode($jsonData, true);
     }
 
@@ -78,7 +78,7 @@ class SetDefaultMalomModays extends Command
 
     private function attachMondayToStore()
     {
-        if (!$this->store->mondays->contains($this->newMonday->id)) {
+        if ($this->store && !$this->store->mondays->contains($this->newMonday->id)) {
             $this->store->mondays()->attach($this->newMonday->id, [], false);
         }
     }
