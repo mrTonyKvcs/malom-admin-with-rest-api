@@ -52,8 +52,11 @@ class SetDefaultMalomModays extends Command
     private function setConfigs()
     {
         $this->mondays = config('malom.mondays');
-        $jsonData = Storage::get('public/malom-mondays/24-active.json');
+        $jsonData = Storage::disk('local')->get('public/malom-mondays/stores.json');
         $this->data = json_decode($jsonData, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            dd('JSON hiba:', json_last_error_msg());
+        }
     }
 
     private function createMonday($monday)

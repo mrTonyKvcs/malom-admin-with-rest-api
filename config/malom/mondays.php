@@ -2,47 +2,47 @@
 
 return [
     [
-        'title' => 'Február 12.',
-        'published_at' => '2024-02-12'
+        'title' => 'Február 10.',
+        'published_at' => '2025-02-10'
     ],
     [
-        'title' => 'Március 11.',
-        'published_at' => '2024-03-11'
+        'title' => 'Március 10.',
+        'published_at' => '2025-03-10'
     ],
     [
-        'title' => 'Április 8.',
-        'published_at' => '2024-04-08'
+        'title' => 'Április 14.',
+        'published_at' => '2025-04-14'
     ],
     [
-        'title' => 'Május 13.',
-        'published_at' => '2024-05-13'
+        'title' => 'Május 12.',
+        'published_at' => '2025-05-12'
     ],
     [
-        'title' => 'Június 10.',
-        'published_at' => '2024-06-10'
+        'title' => 'Június 16.',
+        'published_at' => '2025-06-16'
     ],
     [
-        'title' => 'Július 8.',
-        'published_at' => '2024-07-08'
+        'title' => 'Július 14.',
+        'published_at' => '2025-07-14'
     ],
     [
-        'title' => 'Augusztus 12.',
-        'published_at' => '2024-08-12'
+        'title' => 'Augusztus 11.',
+        'published_at' => '2025-08-11'
     ],
     [
-        'title' => 'Szeptember 9.',
-        'published_at' => '2024-09-09'
+        'title' => 'Szeptember 8.',
+        'published_at' => '2025-09-08'
     ],
     [
-        'title' => 'Október 14.',
-        'published_at' => '2024-10-14'
+        'title' => 'Október 13.',
+        'published_at' => '2025-10-13'
     ],
     [
-        'title' => 'November 11.',
-        'published_at' => '2024-11-11'
+        'title' => 'November 10.',
+        'published_at' => '2025-11-10'
     ],
     [
-        'title' => 'December 9.',
-        'published_at' => '2024-12-09'
+        'title' => 'December 8.',
+        'published_at' => '2025-12-08'
     ],
 ];
