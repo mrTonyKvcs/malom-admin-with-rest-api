@@ -73,9 +73,11 @@ class SetDefaultMalomModays extends Command
     private function findAndUpdateTheStore($item)
     {
         $this->store = Store::where('name', 'LIKE', '%' . $item['name'] . '%')->first();
-        if (empty($store)) {
+        if (empty($this->store)) {
+            dump($item['name']);
             return true;
         }
+        dump($item['text']);
         $this->store->update(['mondays_text' => $item['text']]);
     }
 
